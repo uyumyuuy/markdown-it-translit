@@ -3,3 +3,9 @@
 .
 <p><span class="assyriology-transliteral">DIS</span></p>
 .
+
+.
+=={DIS}LUGAL.MES2==
+.
+<p><span class="assyriology-transliteral"><sup>DIS</sup>LUGAL.MES<sub>2</sub></span></p>
+.
