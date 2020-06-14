@@ -1,5 +1,5 @@
 {
-  "name": "markdown-it-translit",
+  "name": "@uyum/markdown-it-translit",
   "version": "1.0.0",
   "description": "markdown-it plugin for display assyriology-style transliteration text",
   "main": "index.js",

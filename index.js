@@ -38,7 +38,9 @@ function tokenize(state, silent) {
     max = state.posMax,
     start = state.pos;
 
-  if (state.src.charCodeAt(start) !== 0x3d /* = */) {
+  const equal = "=".charCodeAt(0);
+
+  if (state.src.charCodeAt(start) !== equal /* = */) {
     return false;
   }
   if (silent) {
@@ -49,15 +51,16 @@ function tokenize(state, silent) {
   }
 
   state.pos++;
-  if (state.src.charCodeAt(state.pos) !== 0x3d /* = */) {
+  if (state.src.charCodeAt(state.pos) !== equal /* = */) {
+    state.pos = start;
     return false;
   }
 
   state.pos++;
   while (state.pos < max - 1) {
-    if (state.src.charCodeAt(state.pos) === 0x3d /* = */) {
+    if (state.src.charCodeAt(state.pos) === equal /* = */) {
       state.pos++;
-      if (state.src.charCodeAt(state.pos) === 0x3d /* = */) {
+      if (state.src.charCodeAt(state.pos) === equal /* = */) {
         found = true;
         break;
       }
@@ -89,6 +92,72 @@ function tokenize(state, silent) {
   return true;
 }
 
+function tokenize_akkadian(state, silent) {
+  var found,
+    content,
+    token,
+    max = state.posMax,
+    start = state.pos;
+  const equal = "=".charCodeAt(0);
+  const asterisk = "*".charCodeAt(0);
+
+  if (state.src.charCodeAt(start) !== equal) {
+    return false;
+  }
+  if (silent) {
+    return false;
+  } // don't run any pairs in validation mode
+  if (start + 4 >= max) {
+    return false;
+  }
+
+  state.pos++;
+  if (state.src.charCodeAt(state.pos) !== asterisk) {
+    state.pos = start;
+    return false;
+  }
+
+  state.pos++;
+  while (state.pos < max - 1) {
+    if (state.src.charCodeAt(state.pos) === asterisk) {
+      state.pos++;
+      if (state.src.charCodeAt(state.pos) === equal) {
+        found = true;
+        break;
+      }
+    }
+    state.md.inline.skipToken(state);
+  }
+
+  if (!found || start + 2 === state.pos) {
+    state.pos = start;
+    return false;
+  }
+
+  content = state.src.slice(start + 2, state.pos - 1);
+
+  state.posMax = state.pos;
+  state.pos = start + 2;
+
+  token = state.push("translit_open", "span", 1);
+  token.markup = "=*";
+  token.attrJoin("class", "akkado-transliteral");
+
+  transliterate(content, state);
+
+  token = state.push("translit_close", "span", -1);
+  token.markup = "*=";
+
+  state.pos = state.posMax + 1;
+  state.posMax = max;
+  return true;
+}
+
 module.exports = function ins_plugin(md) {
-  md.inline.ruler.before("emphasis", "assyriology-translit", tokenize);
+  md.inline.ruler.before("emphasis", "assyriology-translit1", tokenize);
+  md.inline.ruler.before(
+    "emphasis",
+    "assyriology-translit2",
+    tokenize_akkadian
+  );
 };

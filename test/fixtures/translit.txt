@@ -1,11 +1,24 @@
 .
 ==DIS==
 .
-<p><span class="assyriology-transliteral">DIS</span></p>
+<p><span class="sumero-transliteral">DIS</span></p>
 .
 
 .
 =={DIS}LUGAL.MES2==
 .
-<p><span class="assyriology-transliteral"><sup>DIS</sup>LUGAL.MES<sub>2</sub></span></p>
+<p><span class="sumero-transliteral"><sup>DIS</sup>LUGAL.MES<sub>2</sub></span></p>
 .
+
+.
+=*DIS*=
+.
+<p><span class="akkado-transliteral">DIS</span></p>
+.
+
+.
+=*{DIS}LUGAL.MES2*=
+.
+<p><span class="akkado-transliteral"><sup>DIS</sup>LUGAL.MES<sub>2</sub></span></p>
+.
+
