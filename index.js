@@ -1,14 +1,25 @@
 "use strict";
 
+function to_sub(x) {
+  if (x === "x") {
+    return "ₓ"
+  } else {
+    var n = Number(x)
+    return String.fromCharCode(0x2080+n)
+  }
+
+}
+
 function transliterate_index(content, state) {
   var m = content.match(/^([^0-9x]+)([0-9x])$/);
   if (m) {
+    content = m[1] + m[2].split().map(to_sub).join("")
+  }
+  if (content === content.toUpperCase()) {
+    state.push("em_open", "em", 1);
     var token = state.push("text", "", 0);
-    token.content = m[1];
-    state.push("sub_open", "sub", 1);
-    var token = state.push("text", "", 0);
-    token.content = m[2];
-    state.push("sub_close", "sub", -1);
+    token.content = content;
+    state.push("em_close", "em", -1);
   } else {
     var token = state.push("text", "", 0);
     token.content = content;
@@ -16,17 +27,23 @@ function transliterate_index(content, state) {
 }
 
 function transliterate(content, state) {
-  var tokens = content.split(/({[^}]+)}|([ .-])/);
+  var splitter = /([ ().-])/
+  var tokens = content.split(/({[^}]+)}|([ ().-])/);
   tokens.forEach((text) => {
     if (!text) return;
     if (text == "") return;
-    var ch = text.charCodeAt(0);
-    if (ch === 0x7b /* { */) {
-      state.push("sup_open", "sup", 1);
-      transliterate_index(text.slice(1), state);
-      state.push("sup_close", "sup", -1);
+    if (splitter.test(text)) {
+      var token = state.push("text", "", 0)
+      token.content = text
     } else {
-      transliterate_index(text, state);
+      var ch = text.charCodeAt(0);
+      if (ch === 0x7b /* { */) {
+        state.push("sup_open", "sup", 1);
+        transliterate_index(text.slice(1), state);
+        state.push("sup_close", "sup", -1);
+      } else {
+        transliterate_index(text, state);
+      }  
     }
   });
 }

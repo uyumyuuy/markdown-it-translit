@@ -1,24 +1,29 @@
 .
 ==DIS==
 .
-<p><span class="sumero-transliteral">DIS</span></p>
+<p><span class="sumero-transliteral"><em>DIS</em></span></p>
 .
 
 .
 =={DIS}LUGAL.MES2==
 .
-<p><span class="sumero-transliteral"><sup>DIS</sup>LUGAL.MES<sub>2</sub></span></p>
+<p><span class="sumero-transliteral"><sup><em>DIS</em></sup><em>LUGAL</em>.<em>MES₂</em></span></p>
 .
 
 .
 =*DIS*=
 .
-<p><span class="akkado-transliteral">DIS</span></p>
+<p><span class="akkado-transliteral"><em>DIS</em></span></p>
 .
 
 .
 =*{DIS}LUGAL.MES2*=
 .
-<p><span class="akkado-transliteral"><sup>DIS</sup>LUGAL.MES<sub>2</sub></span></p>
+<p><span class="akkado-transliteral"><sup><em>DIS</em></sup><em>LUGAL</em>.<em>MES₂</em></span></p>
 .
 
+.
+=*nēši(UR.MAḪ) šá qaq-qa-ri*=
+.
+<p><span class="akkado-transliteral">nēši(<em>UR</em>.<em>MAḪ</em>) šá qaq-qa-ri</span></p>
+.
