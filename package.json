@@ -1,6 +1,6 @@
 {
   "name": "@uyum/markdown-it-translit",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "markdown-it plugin for display assyriology-style transliteration text",
   "main": "index.js",
   "repository": {
@@ -27,8 +27,7 @@
   "directories": {
     "test": "test"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "keywords": [
     "markdown",
     "markdown-it",
