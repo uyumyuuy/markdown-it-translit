@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.com/uyumyuuy/markdown-it-translit.svg?branch=master)](https://travis-ci.com/uyumyuuy/markdown-it-translit)
 [![npm version](https://badge.fury.io/js/%40uyum%2Fmarkdown-it-translit.svg)](https://badge.fury.io/js/%40uyum%2Fmarkdown-it-translit)
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 

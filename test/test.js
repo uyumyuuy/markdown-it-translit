@@ -5,13 +5,13 @@ var generate = require("markdown-it-testgen");
 
 /*eslint-env mocha*/
 
-describe("markdown-it-assyriology-translit", function () {
+describe("markdown-it-translit", function () {
   var md = require("markdown-it")().use(require("../"));
 
   generate(path.join(__dirname, "fixtures/translit.txt"), md);
 });
 
-describe("markdown-it-assyriology-translit", function () {
+describe("accentIndex", function () {
   var md = require("markdown-it")().use(require("../"), {
     accentIndex: true,
     useSubSupUnicode: false,
@@ -20,7 +20,7 @@ describe("markdown-it-assyriology-translit", function () {
   generate(path.join(__dirname, "fixtures/accent_index.txt"), md);
 });
 
-describe("markdown-it-assyriology-translit", function () {
+describe("subsupUnicode", function () {
   var md = require("markdown-it")().use(require("../"), {
     accentIndex: false,
     useSubSupUnicode: true,
@@ -29,7 +29,7 @@ describe("markdown-it-assyriology-translit", function () {
   generate(path.join(__dirname, "fixtures/subsup_unicode.txt"), md);
 });
 
-describe("markdown-it-assyriology-translit", function () {
+describe("convertTypography", function () {
   var md = require("markdown-it")().use(require("../"), {
     accentIndex: false,
     useSubSupUnicode: false,
