@@ -1,0 +1,25 @@
+
+.
+==a a2 a3 a4 a5==
+.
+<p><span class="sumero-transliteral">a á à a<sub>4</sub> a<sub>5</sub></span></p>
+.
+
+.
+==gin gin2 gin3 gin4 gin5==
+.
+<p><span class="sumero-transliteral">gin gín gìn gin<sub>4</sub> gin<sub>5</sub></span></p>
+.
+
+.
+==iri iri2 iri3 iri4 iri5==
+.
+<p><span class="sumero-transliteral">iri íri ìri iri<sub>4</sub> iri<sub>5</sub></span></p>
+.
+
+.
+==URU URU2 URU3 URU4 URU5==
+.
+<p><span class="sumero-transliteral">URU ÚRU ÙRU URU<sub>4</sub> URU<sub>5</sub></span></p>
+.
+

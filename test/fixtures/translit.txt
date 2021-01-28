@@ -1,13 +1,13 @@
 .
 ==DIS==
 .
-<p><span class="sumero-transliteral"><em>DIS</em></span></p>
+<p><span class="sumero-transliteral">DIS</span></p>
 .
 
 .
 =={DIS}LUGAL.MES2==
 .
-<p><span class="sumero-transliteral"><sup><em>DIS</em></sup><em>LUGAL</em>.<em>MES₂</em></span></p>
+<p><span class="sumero-transliteral"><sup>DIS</sup>LUGAL.MES<sub>2</sub></span></p>
 .
 
 .
@@ -19,7 +19,7 @@
 .
 =*{DIS}LUGAL.MES2*=
 .
-<p><span class="akkado-transliteral"><sup><em>DIS</em></sup><em>LUGAL</em>.<em>MES₂</em></span></p>
+<p><span class="akkado-transliteral"><sup><em>DIS</em></sup><em>LUGAL</em>.<em>MES<sub>2</sub></em></span></p>
 .
 
 .
