@@ -45,11 +45,11 @@ function convert(text) {
 }
 
 function create_rule(type, accentIndex, convertTypography, useSubSupUnicode) {
-  const first_marker = "=".charCodeAt(0);
-  const second_maker_sumerian = "=".charCodeAt(0);
-  const second_marker_akkadian = "*".charCodeAt(0);
+  var first_marker = "=".charCodeAt(0);
+  var second_maker_sumerian = "=".charCodeAt(0);
+  var second_marker_akkadian = "*".charCodeAt(0);
 
-  let akkadian;
+  var akkadian;
   if (type === "akkadian") {
     akkadian = true;
   } else {
@@ -71,13 +71,13 @@ function create_rule(type, accentIndex, convertTypography, useSubSupUnicode) {
     }
     var m = content.match(/^([^0-9x]+)([0-9]*[0-9x])$/);
     if (m) {
-      const capital = akkadian && m[1] === m[1].toUpperCase();
-      const number = Number(m[2]);
+      var capital = akkadian && m[1] === m[1].toUpperCase();
+      var number = Number(m[2]);
       if (capital) {
         state.push("em_open", "em", 1);
       }
       if (accentIndex && (number === 2 || number === 3)) {
-        const accent = function (c) {
+        var accent = function (c) {
           return {
             a: ["a", "á", "à"],
             i: ["i", "í", "ì"],
@@ -124,7 +124,7 @@ function create_rule(type, accentIndex, convertTypography, useSubSupUnicode) {
 
   function transliterate(content, state) {
     var tokens = content.split(/({[^}]+)}|([ .\-()])/);
-    tokens.forEach((text) => {
+    tokens.forEach(function (text) {
       if (!text) return;
       if (text == "") return;
       var ch = text.charCodeAt(0);
